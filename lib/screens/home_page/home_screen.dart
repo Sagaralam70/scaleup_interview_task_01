@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_task_1/core/constants/app_colors.dart';
 import 'package:flutter_task_1/core/constants/app_strings.dart';
 import 'package:flutter_task_1/core/utils/validators.dart';
 import 'package:flutter_task_1/screens/home_page/home_screen_controller/home_screen_controller.dart';
@@ -15,9 +15,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<HomeScreen> {
-
-
-
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeScreenController>(
@@ -28,26 +25,42 @@ class _LoginScreenState extends State<HomeScreen> {
             child: Padding(
               padding: const EdgeInsets.all(20),
               child: Form(
-                key: controller.formKey, // ✅ use controller's formKey
+                key: controller.formKey,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
+
+                    ///<<<<<<<<<<this is for email text field>>>>>>>>>>
                     CustomTextField(
-                      controller: controller.emailController, // controller field
+                      ///<<<<<<<<this is for controller field>>>>>>>>>
+                      controller: controller.emailController,
                       hint: AppStrings.email,
                       validator: Validators.validateEmail,
                     ),
+
                     const SizedBox(height: 20),
+
+                    ///<<<<<<<<<<this is for password field>>>>>>>>>>>
                     CustomTextField(
-                      controller: controller.passwordController, // controller field
+                      controller: controller.passwordController,
+
                       hint: AppStrings.password,
                       obscure: true,
                       validator: Validators.validatePassword,
                     ),
                     const SizedBox(height: 30),
+
                     CustomButton(
                       text: AppStrings.login,
-                      onTap: () => controller.validateLogin(context), // call controller method
+                      textStyle: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                      color: AppColors.blue,
+                      onTap: () => controller.validateLogin(
+                        context,
+                      ),
                     ),
                   ],
                 ),
