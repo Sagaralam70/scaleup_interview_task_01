@@ -48,7 +48,10 @@ class _LoginScreenState extends State<HomeScreen> {
                       obscure: true,
                       validator: Validators.validatePassword,
                     ),
+
                     const SizedBox(height: 30),
+
+                    ///<<<<<<<<<<this is for elevated button>>>>>>>>>>>
 
                     CustomButton(
                       text: AppStrings.login,
