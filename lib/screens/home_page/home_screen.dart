@@ -38,13 +38,23 @@ class _LoginScreenState extends State<HomeScreen> {
                     width: double.maxFinite,
                     color: Colors.blue,
                     child: Center(
-                      child: Text(
-                        AppStrings.loginPage,
-                        style: TextStyle(
-                          fontSize: 35,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 85),
+                            ///<<<<<customise the Custom Container>>>>>>>
+                            child: Text(
+                              AppStrings.loginPage,
+                              style: TextStyle(
+                                fontSize: 35,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 5,),
+                          Icon(Icons.notification_add,color: Colors.white,)
+                        ],
                       ),
                     ),
                   ),
